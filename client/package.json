@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "project3-client",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "Project 3 client",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
