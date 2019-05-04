@@ -23,6 +23,15 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.0"
+    "babel-plugin-styled-components": "^1.10.0",
+    "jest": "^24.7.1"
+  },
+  "babel": {
+    "plugins": [
+      "babel-plugin-styled-components"
+    ]
+  },
+  "jest": {
+    "verbose": true
   }
 }
