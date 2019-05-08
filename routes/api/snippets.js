@@ -7,7 +7,7 @@ router
   .get(snippetsController.findAll)
   .post(snippetsController.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/snippets/:id"
 router
   .route("/:id")
   .get(snippetsController.findById)
