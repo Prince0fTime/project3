@@ -17,7 +17,8 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/bitsplease"
+  process.env.MONGODB_URI || "mongodb://localhost/bitsplease",
+  { useNewUrlParser: true }
 );
 
 app.listen(PORT, () => {
