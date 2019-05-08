@@ -14,8 +14,7 @@ var SnippetSchema = new Schema({
     type: String
   },
   author: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
     required: true
   },
   date: {
@@ -23,9 +22,7 @@ var SnippetSchema = new Schema({
     required: true,
     default: Date.now
   },
-  tags: {
-    type: [String]
-  }
+  tags: [{ type: String }]
 });
 
 var Snippet = mongoose.model("Snippet", SnippetSchema);
