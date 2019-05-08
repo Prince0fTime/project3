@@ -27,7 +27,6 @@
   ],
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "jest": "^24.7.1",
     "@storybook/react": "^5.0.11",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
