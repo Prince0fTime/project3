@@ -1,8 +1,12 @@
 import axios from "axios";
 
 export default {
-  getSnippets: function() {
-    return axios.get("/api/snippets");
+  getSnippets: function(snippetData) {
+    if (snippetData === undefined) {
+      return axios.get("/api/snippets");
+    } else {
+      return axios.get("/api/snippets", { params: snippetData });
+    }
   },
   saveSnippet: function(snippetData) {
     return axios.post("/api/snippets", snippetData);
