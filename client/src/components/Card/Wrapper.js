@@ -1,8 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
 import styled from 'styled-components';
-import { Input } from './TextInput';
-import Editor from './Editor';
+import Form from './Form';
 
 const Container = styled.div`
 background: black;
@@ -17,8 +15,7 @@ function Wrapper() {
   return (
     <Container>
       <div className='rowC'>
-        <Editor />
-        <Input />
+        <Form />
       </div>
     </Container>
   );
