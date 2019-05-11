@@ -3,6 +3,7 @@ import AceEditor from "react-ace";
 import "../../index.css";
 import "brace/mode/javascript";
 import "brace/theme/monokai";
+import API from "../../utils/API";
 
 class Form extends Component {
   constructor() {
@@ -27,9 +28,20 @@ class Form extends Component {
     });
   };
 
+  saveHandler = event => {
+    event.preventDefault();
+    API.saveSnippet({
+      title: this.state.title,
+      content: this.state.content,
+      description: this.state.description,
+      author: "mjg@phoenixtrap.com" // change this to email from login
+    });
+  };
+
   render() {
     return (
       <form>
+        <label htmlFor="title">Title:</label>
         <input
           id="title"
           type="string"
@@ -45,6 +57,7 @@ class Form extends Component {
           onChange={this.onAceEditorChange}
           editorProps={{ $blockScrolling: true }}
         />
+        <label htmlFor="title">Description:</label>
         <input
           id="description"
           type="string"
@@ -52,7 +65,9 @@ class Form extends Component {
           defaultValue={this.state.description}
           onChange={this.changeHandler}
         />
-        <button type="submit" name="submit" />
+        <button type="submit" name="submit" onClick={this.saveHandler}>
+          Save
+        </button>
       </form>
     );
   }
