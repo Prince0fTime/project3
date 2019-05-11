@@ -2,7 +2,7 @@
   "name": "project3",
   "version": "1.0.0",
   "engines": {
-    "node" :"10.15.1"
+    "node": "10.15.1"
   },
   "description": "Project 3 for UT Coding Boot Camp",
   "main": "server.js",
