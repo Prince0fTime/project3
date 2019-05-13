@@ -8,3 +8,11 @@
   margin-left: 40%;
 }
 
+.logo-text{
+  font-family: 'Righteous', cursive;
+}
+
+.avatar-logo{
+  margin: 4px 5px;
+  float: right
+}
