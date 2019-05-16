@@ -1,9 +1,34 @@
 import React, { Component } from "react";
 import AceEditor from "react-ace";
+import styled from 'styled-components';
 import "../../index.css";
 import "brace/mode/javascript";
-import "brace/theme/monokai";
+import "brace/theme/tomorrow";
 import API from "../../utils/API";
+
+const Input = styled.input`
+  border: none;
+  border-bottom: 4px solid #8842d5;
+  color: black;
+  display: block;
+  font-size: 25px;
+  width: 200px;
+`;
+
+const Button = styled.button`
+    background-color: #8842d5;
+    border: none;
+    color: white;
+    padding: 18px 36px;
+    text-decoration: none;
+    margin: 5px 4px;
+    cursor: pointer;  
+`;
+
+const form = styled.div`
+position: relative;
+`;
+
 
 class Form extends Component {
   constructor() {
@@ -15,6 +40,8 @@ class Form extends Component {
       date: ""
     };
   }
+
+
 
   changeHandler = ({ target }) => {
     this.setState({
@@ -41,33 +68,35 @@ class Form extends Component {
   render() {
     return (
       <form>
-        <label htmlFor="title">Title:</label>
-        <input
-          id="title"
-          type="string"
-          name="title"
+        <label htmlFor='title'>Title:</label>
+        <Input
+          id='title'
+          type='text'
+          name='title'
+          placeholder='Snippet Title'
           value={this.state.title}
           onChange={this.changeHandler}
         />
+        <textarea
+          id='description'
+          type='text'
+          name='description'
+          defaultValue={this.state.description}
+          onChange={this.changeHandler}
+        />
         <AceEditor
-          mode="javascript"
-          theme="monokai"
-          name="content"
+          mode='javascript'
+          theme='tomorrow'
+          name='content'
           value={this.state.content}
           onChange={this.onAceEditorChange}
           editorProps={{ $blockScrolling: true }}
         />
-        <label htmlFor="title">Description:</label>
-        <input
-          id="description"
-          type="string"
-          name="description"
-          defaultValue={this.state.description}
-          onChange={this.changeHandler}
-        />
-        <button type="submit" name="submit" onClick={this.saveHandler}>
+        <label htmlFor='title'>Description:</label>
+
+        <Button type='submit' name='submit' onClick={this.saveHandler}>
           Save
-        </button>
+        </Button>
       </form>
     );
   }
