@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect, Route, Router } from 'react-router-dom';
 import App from './App';
 import Home from './Home/Home';
-import Profile from './Profile/Profile';
 import Wrapper from './components/Card/Wrapper';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
@@ -26,13 +25,6 @@ export const makeMainRoutes = () => {
               <Redirect to="/"/>
             ) : (
               <Home auth={auth} {...props} />
-            )
-          )} />
-          <Route path="/profile" render={(props) => (
-            !auth.isAuthenticated() ? (
-              <Redirect to="/"/>
-            ) : (
-              <Profile auth={auth} {...props} />
             )
           )} />
 
