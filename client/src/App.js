@@ -3,6 +3,7 @@ import { Navbar, Button, Form, FormControl } from 'react-bootstrap';
 import Avatar from 'react-avatar';
 import Auth from '../src/Auth/Auth'
 import './App.css';
+import { Link } from 'react-router-dom'
 
 class App extends Component {
   goTo(route) {
@@ -28,54 +29,37 @@ class App extends Component {
       <div>
         <Navbar fluid>
           <Navbar.Header>
-            <Navbar.Brand href='home' className='logo-text'>
-              BitsPlease
+            <Navbar.Brand href='/something' className='logo-text'>
+              <Link to='/home'>BitsPlease</Link>
             </Navbar.Brand>
-            {isAuthenticated() && (
-              <null>
-                <Button
-                  bsStyle='primary'
-                  className='btn-margin'
-                  onClick={this.goTo.bind(this, 'home')}
-                >
-                  Home
-                </Button>
-
-                <Button
-                  bsStyle='primary'
-                  className='btn-margin'
-                  onClick={this.goTo.bind(this, 'profile')}
-                >
-                  Profile
-                </Button>
-              </null>
-            )}
-            {isAuthenticated() && (
-              <Button
-                id='qsLogoutBtn'
-                bsStyle='primary'
-                className='btn-margin'
-                onClick={this.logout.bind(this)}
-              >
-                Log Out
-              </Button>
-            )}
-            {isAuthenticated() && (
-            <Form class="form-inline">
-              <FormControl class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></FormControl>
-              <Button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</Button>
-            </Form>
-            )}
-            {isAuthenticated() && (
-              <Avatar
-                googleId={Auth.idToken}
-                className='avatar-logo mr-sm-2'
-                size='35px'
-                round
-                onClick={this.goTo.bind(this, 'profile')}
-              />
-            )}
           </Navbar.Header>
+          {isAuthenticated() && (
+            <Form inline>
+              <FormControl
+                class='form-control mr-sm-2'
+                type='search'
+                placeholder='Search'
+                aria-label='Search'
+              />
+              <Button
+                class='btn btn-outline-success my-2 my-sm-0'
+                type='submit'
+              >
+                Search
+              </Button>
+
+              {isAuthenticated() && (
+                <Button
+                  id='qsLogoutBtn'
+                  bsStyle='primary'
+                  className='btn-margin'
+                  onClick={this.logout.bind(this)}
+                >
+                  Log Out
+                </Button>
+              )}
+            </Form>
+          )}
         </Navbar>
         <div className='container'>{this.props.children}</div>
         {!isAuthenticated() && (
