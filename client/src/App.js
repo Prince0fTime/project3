@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Navbar, Button, Form, FormControl } from 'react-bootstrap';
-import Avatar from 'react-avatar';
-import Auth from '../src/Auth/Auth'
 import './App.css';
 import { Link } from 'react-router-dom'
 
