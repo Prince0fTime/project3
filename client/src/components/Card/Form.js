@@ -34,11 +34,12 @@ class Form extends Component {
       title: this.state.title,
       content: this.state.content,
       description: this.state.description,
-      author: "mjg@phoenixtrap.com" // change this to email from login
+      author: this.props.userName // change this to email from login
     });
   };
 
   render() {
+
     return (
       <form>
         <label htmlFor="title">Title:</label>

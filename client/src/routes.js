@@ -32,7 +32,7 @@ export const makeMainRoutes = () => {
             !auth.isAuthenticated() ? (
               <Redirect to="/"/>
             ) : (
-              <Wrapper />
+              <Wrapper auth={auth} {...props}/>
             )
           )} />
 

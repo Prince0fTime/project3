@@ -12,8 +12,13 @@ class BitsCard extends Component {
       BitsData: []
     };
   }
-  componentDidMount(){
-    API.getSnippets().then(response => {
+  componentWillMount(){
+    const searchObj = {
+      author: this.props.userName
+    };
+    // console.log(this.props.userName)
+
+    API.getSnippets(searchObj).then(response => {
       this.setState({
         BitsData: response.data
       })
@@ -23,18 +28,16 @@ class BitsCard extends Component {
   }
   render() {
     return (
-      <null>
+      <div>
       {this.state.BitsData.map((bitData, index) => (
-        <null>
           <card className="bitcard" key={index.toString()}>
             <h2>{bitData.title}</h2>
             <p>{bitData.description}
             </p>
             <Button variant="primary">Go somewhere</Button>
           </card>
-      </null>
       ))}
-      </null>
+      </div>
     );
   }
 }
