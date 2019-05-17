@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Form from './SnippetForm';
 
@@ -14,14 +14,29 @@ margin: 0 auto;
 display: inline-block;
 `;
 
-function Wrapper() {
-  return (
-    <Container>
+class Wrapper extends Component {
+  componentWillMount() {
+    this.setState({ profile: {} });
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: userProfile });
+    }
+  }
+  
+  render() {
+    const { profile } = this.state;
+    return (
+      <Container>
       <div className='rowC'>
-        <Form />
+        <Form userName={profile.name}/>
       </div>
     </Container>
-  );
-};
+    );
+  }
+}
 
 export default Wrapper;

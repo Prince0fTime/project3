@@ -1,0 +1,11 @@
+.bitcard{
+    float: left;
+    margin: 3%;
+    padding: 1%;
+    border-style: solid;
+    border-width: 0.4px;
+    border-radius: 5px;
+    border-color: #e2e1e1;
+    background-color: rgb(248, 245, 245);
+    
+}

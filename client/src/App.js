@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
   goTo(route) {
-    this.props.history.replace(`/${route}`)
+    this.props.history.push(`/${route}`)
   }
   login() {
     this.props.auth.login(); 
@@ -31,7 +31,6 @@ class App extends Component {
             </Navbar.Brand>
             {
               isAuthenticated() && (
-                <null>
                 <Button
                 bsStyle="primary"
                 className="btn-margin"
@@ -39,15 +38,6 @@ class App extends Component {
               >
                 Home
               </Button>
-                
-                  <Button
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.goTo.bind(this, 'profile')}
-                  >
-                    Profile
-                  </Button>
-                  </null>
                 )
             }
             {
