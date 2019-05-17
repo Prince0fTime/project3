@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Button } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 import BitsCard from '../components/Bits/BitsCard';
 
@@ -6,6 +7,10 @@ import BitsCard from '../components/Bits/BitsCard';
 class Home extends Component {
   state = {
     profile: {}
+  };
+
+  goTo(route) {
+    this.props.history.push(`/${route}`);
   }
 
   login() {
@@ -24,21 +29,23 @@ class Home extends Component {
   render() {
     const { profile } = this.state;
     return (
-      <div className="container">
-      <Fragment>
-        {!this.state.profile.name && <div>Loading...</div>}
-      </Fragment>
-      <Fragment>
-        {this.state.profile.name &&
-          <Fragment>
-              <h4>
-                You are logged in! You can now view your
-              </h4>
-              <div className="col-12">
-            <BitsCard userName={profile.name}/>
-            </div>
-          </Fragment>
-        }
+      <div className='container'>
+        <Fragment>{!this.state.profile.name && <div>Loading...</div>}</Fragment>
+        <Fragment>
+          {this.state.profile.name && (
+            <Fragment>
+              <Button
+                bsStyle='primary'
+                className='btn-margin'
+                onClick={this.goTo.bind(this, 'some-bits-Please')}
+              >
+                New Snippet
+              </Button>
+              <div className='col-12'>
+                <BitsCard userName={profile.name} />
+              </div>
+            </Fragment>
+          )}
         </Fragment>
       </div>
     );
