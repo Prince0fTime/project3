@@ -12,7 +12,7 @@ padding-bottom: 5px
 `;
 
 class Wrapper extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.setState({ profile: {} });
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
