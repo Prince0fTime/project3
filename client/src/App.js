@@ -70,15 +70,7 @@ class App extends Component {
                   className='btn-margin'
                   onClick={this.login.bind(this)}
                 >
-                  Log In
-                </Button>
-                <Button
-                  id='qsLoginBtn'
-                  bsStyle='primary'
-                  className='btn-margin'
-                  onClick={this.login.bind(this)}
-                >
-                  Sign Up
+                  Log In/Sign Up
                 </Button>
               </div>
             </div>
