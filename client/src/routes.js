@@ -15,10 +15,7 @@ const handleAuthentication = ({location}) => {
   }
 }
 const bitIdHandle = (IDVAL) => {
-console.log("IDVAL "+ IDVAL)
-console.log("Before ", BitId)
   BitId = IDVAL
-console.log("after ", BitId)
 }
 
 export const makeMainRoutes = () => {

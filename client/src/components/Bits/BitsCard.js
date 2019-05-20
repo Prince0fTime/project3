@@ -32,8 +32,6 @@ class BitsCard extends Component {
   }
   handleClick = bitId => {
     const {bitIdHandle} = this.props;
-    
-    console.log(bitId);
     this.setState({ bitDataID: bitId })
     bitIdHandle(bitId)
     this.goTo('some-bits-Please')

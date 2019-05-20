@@ -47,7 +47,6 @@ class Wrapper extends Component {
   render() {
     
     const { profile, bits, isEditing} = this.state;
-    console.log(bits)
     return (
       <Container>
       <div className='rowC'>

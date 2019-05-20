@@ -79,9 +79,6 @@ if (this.props.bitsCard !== undefined){
   saveHandler = event => {
     event.preventDefault();
     if (this.state.isEditing) {
-      console.log("updating")
-      console.log(this.state.id)
-      
       API.updateSnippet(this.state.id,{
         title: this.state.title,
         content: this.state.content,
@@ -105,8 +102,6 @@ if (this.props.bitsCard !== undefined){
   };
 
   render() {
-    console.log("isEditing: " + this.state.isEditing)
-    console.log("ID: " + this.state.id)
     const { isEditing } = this.state;
 
     return (
