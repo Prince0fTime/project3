@@ -4,27 +4,40 @@ import {Button} from 'react-bootstrap';
 import './BitsCard.css';
 
 
-
 class BitsCard extends Component {
+  goTo(route) {
+    this.props.history.push(`/${route}`)
+  }
   constructor() {
     super();
     this.state = {
       BitsData: []
     };
   }
-  componentWillMount(){
+  getBits = () =>{
     const searchObj = {
       author: this.props.userName
     };
-    // console.log(this.props.userName)
-
     API.getSnippets(searchObj).then(response => {
       this.setState({
         BitsData: response.data
       })
-    })
-
-
+    }) 
+  } 
+  componentDidMount(){
+    this.getBits()
+  }
+  componentDidUpdate(){
+    this.getBits()
+  }
+  handleClick = bitId => {
+    const {bitIdHandle} = this.props;
+    
+    console.log(bitId);
+    this.setState({ bitDataID: bitId })
+    bitIdHandle(bitId)
+    this.goTo('some-bits-Please')
+    
   }
   render() {
     return (
@@ -34,7 +47,9 @@ class BitsCard extends Component {
             <h2>{bitData.title}</h2>
             <p>{bitData.description}
             </p>
-            <Button variant="primary">Go somewhere</Button>
+            <p>{bitData._id}
+            </p>
+            <Button onClick={() => this.handleClick(bitData._id)}>View/Edit</Button>
           </card>
       ))}
       </div>

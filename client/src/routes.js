@@ -8,11 +8,17 @@ import Auth from './Auth/Auth';
 import history from './history';
 
 const auth = new Auth();
-
+let BitId = 0;
 const handleAuthentication = ({location}) => {
   if (/access_token|id_token|error/.test(location.hash)) {
     auth.handleAuthentication();
   }
+}
+const bitIdHandle = (IDVAL) => {
+console.log("IDVAL "+ IDVAL)
+console.log("Before ", BitId)
+  BitId = IDVAL
+console.log("after ", BitId)
 }
 
 export const makeMainRoutes = () => {
@@ -24,7 +30,7 @@ export const makeMainRoutes = () => {
             !auth.isAuthenticated() ? (
               <Redirect to="/"/>
             ) : (
-              <Home auth={auth} {...props} />
+              <Home bitIdHandle={bitIdHandle} auth={auth} {...props} />
             )
           )} />
 
@@ -32,7 +38,8 @@ export const makeMainRoutes = () => {
             !auth.isAuthenticated() ? (
               <Redirect to="/"/>
             ) : (
-              <Wrapper auth={auth} {...props}/>
+                <Wrapper bitIdHandle={bitIdHandle} auth={auth} {...props} BitID={BitId}/>
+
             )
           )} />
 
