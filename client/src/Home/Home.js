@@ -28,6 +28,7 @@ class Home extends Component {
   }
   render() {
     const { profile } = this.state;
+    const {bitIdHandle} = this.props;
     return (
       <div className='container'>
         <Fragment>{!this.state.profile.name && <div>Loading...</div>}</Fragment>
@@ -37,13 +38,12 @@ class Home extends Component {
               <Button
                 bsStyle='primary'
                 className='btn-margin'
-                id='newSnippetBtn'
                 onClick={this.goTo.bind(this, 'some-bits-Please')}
               >
                 New Snippet
               </Button>
               <div className='col-12'>
-                <BitsCard userName={profile.name} />
+                <BitsCard history={this.props.history} bitIdHandle={bitIdHandle} userName={profile.name} />
               </div>
             </Fragment>
           )}

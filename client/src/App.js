@@ -14,7 +14,7 @@ class App extends Component {
     this.props.auth.logout();
   }
   componentDidMount() {
-    const { renewSession } = this.props.auth;
+    const { renewSession } = this.props.auth;    
     if (localStorage.getItem('isLoggedIn') === 'true') {
       renewSession();
     }
@@ -70,15 +70,7 @@ class App extends Component {
                   className='btn-margin'
                   onClick={this.login.bind(this)}
                 >
-                  Log In
-                </Button>
-                <Button
-                  id='qsLoginBtn'
-                  bsStyle='primary'
-                  className='btn-margin'
-                  onClick={this.login.bind(this)}
-                >
-                  Sign Up
+                  Log In/Sign Up
                 </Button>
               </div>
             </div>

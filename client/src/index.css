@@ -3,13 +3,3 @@ body {
   padding: 0; */
   font-family: sans-serif;
 }
-
-textarea {
-  color: #000000;
-  width: 90%;
-  height: 100%;
-}
-
-#saveBtn {
-  margin-top: 2em;
-}
