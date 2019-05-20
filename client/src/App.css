@@ -20,3 +20,8 @@
 .form-inline{
   float: right
 }
+
+#newSnippetBtn{	
+margin: 0 auto;	
+display: block	
+}
