@@ -4,14 +4,20 @@ import Form from './SnippetForm';
 
 const Container = styled.div`
 background: white;
-color: white;
-width: 600px;
-padding-top:5px;
-padding-left: 5px;
-padding-right: 5px;
-padding-bottom: 5px;
-margin: 0 auto;
+width: 50%;
+padding-top:2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 2em;
 display: inline-block;
+border: 2px solid grey;
+border-radius: 0.3px;
+`;
+
+const CenteredContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
 `;
 
 class Wrapper extends Component {
@@ -30,11 +36,13 @@ class Wrapper extends Component {
   render() {
     const { profile } = this.state;
     return (
-      <Container>
-      <div className='rowC'>
-        <Form userName={profile.name}/>
-      </div>
-    </Container>
+      <CenteredContainer>
+        <Container>
+          <div className='rowC'>
+            <Form userName={profile.name} />
+          </div>
+        </Container>
+      </CenteredContainer>
     );
   }
 }

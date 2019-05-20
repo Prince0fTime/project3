@@ -37,6 +37,7 @@ class Home extends Component {
               <Button
                 bsStyle='primary'
                 className='btn-margin'
+                id='newSnippetBtn'
                 onClick={this.goTo.bind(this, 'some-bits-Please')}
               >
                 New Snippet
