@@ -8,11 +8,12 @@ import API from "../../utils/API";
 
 const Input = styled.input`
   border: none;
-  border-bottom: 4px solid #8842d5;
+  border-bottom: 2px solid #000000;
   color: black;
   display: block;
-  font-size: 25px;
-  width: 200px;
+  font-size: 1.5em;
+  width: 80%;
+  margin-bottom: 1em
 `;
 
 const Button = styled.button`
@@ -74,10 +75,11 @@ class Form extends Component {
           id='title'
           type='text'
           name='title'
-          placeholder='Snippet Title'
+          // placeholder='Snippet Title'
           value={this.state.title}
           onChange={this.changeHandler}
         />
+        <label htmlFor='description'>Description:</label>
         <textarea
           id='description'
           type='text'
@@ -92,10 +94,11 @@ class Form extends Component {
           value={this.state.content}
           onChange={this.onAceEditorChange}
           editorProps={{ $blockScrolling: true }}
+          width='90%'
+          className='codeEditor'
         />
-        <label htmlFor='title'>Description:</label>
 
-        <Button type='submit' name='submit' onClick={this.saveHandler}>
+        <Button type='submit' name='submit' id='saveBtn' onClick={this.saveHandler}>
           Save
         </Button>
       </form>
