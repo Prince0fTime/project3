@@ -6,14 +6,22 @@ import API from "../../utils/API";
 
 const Container = styled.div`
 background: white;
-color: white;
-width: 600px;
-padding-top:5px;
-padding-left: 5px;
-padding-right: 5px;
-padding-bottom: 5px;
-margin: 0 auto;
-display: inline-block;
+color: black;	width: 50%;
+width: 600px;	padding-top:2em;
+padding-top:5px;	padding-left: 2em;
+padding-left: 5px;	padding-right: 2em;
+padding-right: 5px;	padding-bottom: 2em;
+padding-bottom: 5px;	
+margin: 0 auto;	
+display: inline-block;	display: inline-block;
+border: 2px solid grey;
+border-radius: 0.3px;
+`;
+
+ const CenteredContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
 `;
 
 class Wrapper extends Component {
@@ -48,17 +56,28 @@ class Wrapper extends Component {
     
     const { profile, bits, isEditing} = this.state;
     return (
-      <Container>
-      <div className='rowC'>
-      {isEditing &&(        
-        <Form bitIdHandle={this.props.bitIdHandle} history={this.props.history} userName={profile.name} bitsCard={bits}/>
-        )}
-        {!isEditing &&(        
-          <Form bitIdHandle={this.props.bitIdHandle} history={this.props.history} userName={profile.name} bitsCard={bits}/>
-          )}
-
-      </div>
-    </Container>
+      <CenteredContainer>
+        <Container>
+          <div className='rowC'>
+            {isEditing && (
+              <Form
+                bitIdHandle={this.props.bitIdHandle}
+                history={this.props.history}
+                userName={profile.name}
+                bitsCard={bits}
+              />
+            )}
+            {!isEditing && (
+              <Form
+                bitIdHandle={this.props.bitIdHandle}
+                history={this.props.history}
+                userName={profile.name}
+                bitsCard={bits}
+              />
+            )}
+          </div>
+        </Container>
+      </CenteredContainer>
     );
   }
 }
