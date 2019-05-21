@@ -120,7 +120,7 @@ if (this.props.bitsCard !== undefined){
           id='description'
           type='text'
           name='description'
-          defaultValue={this.state.description}
+          value={this.state.description}
           onChange={this.changeHandler}
           width='90%'	
           className='codeEditor'
@@ -133,6 +133,7 @@ if (this.props.bitsCard !== undefined){
           onChange={this.onAceEditorChange}
           editorProps={{ $blockScrolling: true }}
         />
+        <label htmlFor='title'>Description:</label>
         <div>
           <Button onClick={this.goTo.bind(this, 'home')}>
             Back
@@ -140,10 +141,10 @@ if (this.props.bitsCard !== undefined){
           {isEditing ?(
             <Fragment>
               <Button type='submit' name='submit' onClick={this.saveHandler}>
-                Save Changes
+                Save Edit
               </Button>
               <Button onClick={this.deleteHandler}>
-                Delete
+                Delete?
               </Button>     
             </Fragment>
           ):(        
