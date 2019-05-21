@@ -31,8 +31,8 @@ class App extends Component {
               <Link to='/home'>BitsPlease</Link>
             </Navbar.Brand>
           </Navbar.Header>
-            {isAuthenticated() && (
-              <Form inline>
+          {isAuthenticated() && (
+            <Form inline>
                 <Button
                   id='qsLogoutBtn'
                   bsStyle='primary'
