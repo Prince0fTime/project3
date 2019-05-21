@@ -43,10 +43,7 @@ class BitsCard extends Component {
       {this.state.BitsData.map((bitData, index) => (
           <card className="bitcard" key={index.toString()}>
             <h2>{bitData.title}</h2>
-            <p>{bitData.description}
-            </p>
-            <p>{bitData._id}
-            </p>
+            <p>{bitData.description}</p>
             <Button onClick={() => this.handleClick(bitData._id)}>View/Edit</Button>
           </card>
       ))}
