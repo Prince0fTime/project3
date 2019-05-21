@@ -133,7 +133,6 @@ if (this.props.bitsCard !== undefined){
           onChange={this.onAceEditorChange}
           editorProps={{ $blockScrolling: true }}
         />
-        <label htmlFor='title'>Description:</label>
         <div>
           <Button onClick={this.goTo.bind(this, 'home')}>
             Back
