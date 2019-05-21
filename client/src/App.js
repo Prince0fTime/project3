@@ -33,20 +33,6 @@ class App extends Component {
           </Navbar.Header>
           {isAuthenticated() && (
             <Form inline>
-              <FormControl
-                class='form-control mr-sm-2'
-                type='search'
-                placeholder='Search'
-                aria-label='Search'
-              />
-              <Button
-                class='btn btn-outline-success my-2 my-sm-0'
-                type='submit'
-              >
-                Search
-              </Button>
-
-              {isAuthenticated() && (
                 <Button
                   id='qsLogoutBtn'
                   bsStyle='primary'
@@ -55,7 +41,6 @@ class App extends Component {
                 >
                   Log Out
                 </Button>
-              )}
             </Form>
           )}
         </Navbar>
