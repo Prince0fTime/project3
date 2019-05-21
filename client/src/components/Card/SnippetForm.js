@@ -141,10 +141,10 @@ if (this.props.bitsCard !== undefined){
           {isEditing ?(
             <Fragment>
               <Button type='submit' name='submit' onClick={this.saveHandler}>
-                Save Edit
+                Save Changes
               </Button>
               <Button onClick={this.deleteHandler}>
-                Delete?
+                Delete
               </Button>     
             </Fragment>
           ):(        
