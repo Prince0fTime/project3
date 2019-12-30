@@ -21,6 +21,5 @@ BitsPlease is written using a MERN (MongoDB, Express.js, React.js, Node.js) stac
 * [Mongoose](https://mongoosejs.com/)
 * [DotEnv](https://github.com/motdotla/dotenv)
 
-This is a test edit to see if I have write access to the repo, because I couldn't remember
 
 
